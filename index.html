@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <title>Parallax BG Scrolling</title>
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <!-- Estilo customizado -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+    <header>
+        <a href="#" class="logo">Logo</a>
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </header>
+    <section>
+        <img src="img/stars.png" id="stars">
+        <img src="img/moon.png" id="moon">
+        <img src="img/mountains_behind.png" id="mountains_behind">
+        <h2 id="text">Moon light</h2>
+        <a href="#sec" id="btn">Explore</a>
+        <img src="img/mountains_front.png" id="mountains_front">
+    </section>
+    <div class="sec" id="sec">
+        <h2>Parallax Scrolling Effects</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus aliquet neque, a ornare sapien porttitor sed. Phasellus sodales bibendum euismod. Sed commodo vestibulum ligula eget interdum. Aliquam erat volutpat. Nulla ut augue in neque fringilla ullamcorper. Quisque pretium erat non lacus consectetur, in accumsan libero dignissim. Aenean at dolor velit. Donec sit amet blandit arcu. Aliquam et scelerisque justo. Morbi mollis, justo ut sagittis porttitor, neque libero accumsan felis, eget pretium nisl odio eget metus.
+        <br><br>
+        Quisque tempor vehicula pellentesque. Praesent ut nibh in leo volutpat venenatis et eu tortor. Quisque condimentum sit amet urna vel faucibus. Phasellus vel purus sed massa interdum tincidunt. Praesent sit amet tellus condimentum, posuere dolor eget, placerat metus. Nam facilisis diam et congue volutpat. Suspendisse sed semper diam. Donec lobortis nisl at ultricies porttitor. Vivamus sagittis venenatis arcu, et lobortis ipsum facilisis vel. Fusce placerat, leo nec maximus consectetur, ex erat euismod nisl, quis varius erat est eget leo. Suspendisse sagittis, neque non hendrerit malesuada, nunc ex tincidunt magna, quis fermentum nulla leo sed nulla.
+        <br><br>
+        Phasellus nec laoreet nisi. Pellentesque porta, felis tincidunt aliquam sollicitudin, velit mauris convallis sem, nec sollicitudin mi odio vel lorem. Nam viverra, magna eu semper rhoncus, sapien quam tincidunt quam, vitae porta tellus mauris a ligula. Curabitur pellentesque euismod neque eu molestie. Donec eget est at mauris tempor consequat id non odio. Duis suscipit faucibus nibh, ut vulputate purus convallis vitae. Praesent enim justo, sollicitudin eu maximus eu, fermentum vel leo. Praesent elit nunc, luctus nec sagittis ac, interdum ut metus. Suspendisse at libero elit. Quisque a orci neque. Donec suscipit nulla interdum ante feugiat, id vestibulum mi tincidunt. Etiam pulvinar tortor a scelerisque finibus. Vivamus ac sem nisl.
+        <br><br>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis rhoncus aliquet neque, a ornare sapien porttitor sed. Phasellus sodales bibendum euismod. Sed commodo vestibulum ligula eget interdum. Aliquam erat volutpat. Nulla ut augue in neque fringilla ullamcorper. Quisque pretium erat non lacus consectetur, in accumsan libero dignissim. Aenean at dolor velit. Donec sit amet blandit arcu. Aliquam et scelerisque justo. Morbi mollis, justo ut sagittis porttitor, neque libero accumsan felis, eget pretium nisl odio eget metus.
+        <br><br>
+        Quisque tempor vehicula pellentesque. Praesent ut nibh in leo volutpat venenatis et eu tortor. Quisque condimentum sit amet urna vel faucibus. Phasellus vel purus sed massa interdum tincidunt. Praesent sit amet tellus condimentum, posuere dolor eget, placerat metus. Nam facilisis diam et congue volutpat. Suspendisse sed semper diam. Donec lobortis nisl at ultricies porttitor. Vivamus sagittis venenatis arcu, et lobortis ipsum facilisis vel. Fusce placerat, leo nec maximus consectetur, ex erat euismod nisl, quis varius erat est eget leo. Suspendisse sagittis, neque non hendrerit malesuada, nunc ex tincidunt magna, quis fermentum nulla leo sed nulla.</p>
+    </div>
+
+    <script>
+
+        let stars = document.getElementById('stars');
+        let moon = document.getElementById('moon');
+        let mountains_behind = document.getElementById('mountains_behind');
+        let text = document.getElementById('text');
+        let btn = document.getElementById('btn');
+        let mountains_front = document.getElementById('mountains_front');
+        let header = document.querySelector('header');
+
+        window.addEventListener('scroll', function(){
+            let value = window.scrollY;
+            stars.style.left = value * 0.25 + 'px';
+            moon.style.top = value * 1.25 + 'px';
+            mountains_behind.style.top = value * 0.5 + 'px';
+            mountains_front.style.top = value * 0 + 'px';
+            text.style.marginRight = value * 4 + 'px';
+            text.style.marginTop = value * 1.5 + 'px';
+            btn.style.marginTop = value * 1.5 + 'px';
+            header.style.top = value * 0.5 + 'px';
+        })
+
+    </script>
+</body>
+
+</html>
